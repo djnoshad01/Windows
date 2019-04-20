@@ -7,6 +7,8 @@
 	kemotep@gmail.com / https://github.com/kemotep/
 	This script requires Admin to Run!
 ###########################################################################
+Disable Set-ExecutionPolicy, then run this script. 
+Sign your scripts then renable Set-ExecutionPolicy to prevent unsigned Powershell Scripts.
 #>
 
 # Here we start by creating some variables

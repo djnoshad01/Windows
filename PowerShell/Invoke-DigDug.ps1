@@ -2,10 +2,10 @@
 ###################################################################################
 	Invoke-DigDug / 1.0.0
 	kemotep
-	2019-04-19 / GNU Lesser General Public License v3
+	2019-04-20 / GNU Lesser General Public License v3
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
-	This is my take on FizzBuzz, or in this case DigDug. Load this module via Import-Module
+This is my take on FizzBuzz, or in this case DigDug. Load this using Import-Module.
 #>
 function Invoke-DigDug { 
 	[CmdletBinding()]

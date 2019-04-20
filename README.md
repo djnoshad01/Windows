@@ -4,7 +4,11 @@ This is a GitHub repository of my various Windows Scripts (PowerShell and Batch 
 
 ## Table of Contents
 
-TODO
+* [Getting Started](README.md)
+* [License](LICENSE.md)
+* [Batch Files](https://github.com/kemotep/Windows/tree/master/BatchFiles)
+* [Notes](https://github.com/kemotep/Windows/tree/master/Notes)
+* [PowerShell](https://github.com/kemotep/Windows/tree/master/PowerShell)
 
 ## Getting Started
 
@@ -16,7 +20,7 @@ Here is where I will place instructions on how to use this repository. Eventuall
 
 ## Versioning
 
-I plan to use [SemVer](http://semver.org/) for versioning.
+I plan to use [SemVer](http://semver.org/) for versioning. Subject to change.
 
 ## Author
 
@@ -24,7 +28,7 @@ I plan to use [SemVer](http://semver.org/) for versioning.
 
 ## License
 
-This project is licensed under the LGPLv3 - see the [LICENSE](LICENSE) file for details
+This project is licensed under the LGPLv3 - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 

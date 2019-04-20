@@ -1,3 +1,10 @@
+###################################################################################
+#	SoftwareChecker.bat / 1.0.0
+#	kemotep
+#	2019-04-20 / GNU Lesser General Public License v3
+#	kemotep@gmail.com / https://github.com/kemotep/ 
+###################################################################################
+# This is an example batch file for checking if software is installed on a given computer.
 @echo off
 SETLOCAL EnableExtensions
 echo Verifying software is installed...
