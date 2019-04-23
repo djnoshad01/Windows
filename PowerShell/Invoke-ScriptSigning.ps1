@@ -10,7 +10,7 @@
 Disable Set-ExecutionPolicy, then run this script. 
 Sign your scripts then renable Set-ExecutionPolicy to prevent unsigned Powershell Scripts.
 #>
-
+function Invoke-ScriptSigning {
 # Here we start by creating some variables
 $CertName = "Kemotep's Script Signing Certificate"
 $CertPath = "$env:UserProfile\ScriptSigningCertificate.pfx"
@@ -26,6 +26,8 @@ Import-PfxCertificate -FilePath $CertPath -CertStoreLocation "cert:\LocalMachine
 Import-PfxCertificate -FilePath $CertPath -CertStoreLocation "cert:\LocalMachine\TrustedPublisher" -Password $CertPW
 
 # Uncomment to sign all Powershell Scripts
+# $NewCert = Get-PfxCertificate -FilePath $CertPath
 # $ScriptDir = Path\to\PowerShell\Scripts #Change as needed
 # cd $ScriptDir
-# get-childitem *ps1 | Set-AuthenticodeSignature -Certificate $CertPath
+# get-childitem *ps1 | Set-AuthenticodeSignature -Certificate $NewCert
+}
