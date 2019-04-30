@@ -1,21 +1,26 @@
-  ## Exchange Powershell Commands
+  # Exchange Powershell Commands
 
 Here is a list of useful powershell one-liners to help with exchange management. This is pretty much everything you need for exchange management.
 Note: You need to have an elevated shell, allow remote signed powershell scripts, and permissions to make changes on exchange with your user.
 
-# Table of Contents
+## Table of Contents
 
-  TODO
-
-# Documentation
+ * [Documentation](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#documentation)
+ * [Mailbox Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#mailbox-commands)
+ * [Automatic Processing Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#automatic-processing-commands)
+ * [Permissions Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#permissions-commands)
+ * [Distribution List Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#distribution-list-commands)
+ * [Tracking  Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#tracking-commands)
+ 
+## Documentation
  
 [Here](https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps) is the Microsoft documentation on Connecting to Exchange Online via Powershell.
 
->     $UserCredential = Get-Credential
->     $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
->     Import-PSSession $Session -DisableNameChecking
+    $UserCredential = Get-Credential
+    $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+    Import-PSSession $Session -DisableNameChecking
 	
-# Mailbox Commands
+## Mailbox Commands
 
  Create Mail User
  
@@ -59,7 +64,7 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  
     New-MailContact -Name 'LastName, FirstName' -alias FirstName.LastName -ExternalEmailAddress 'EmailAddress@example.com' -organizationalunit domain.example.com/PATH/TO/ContactsOU
 	
-# Automatic Processing Commands
+## Automatic Processing Commands
  
  Calendar Invitation AutoAccept
  
@@ -69,7 +74,7 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  
     Get-Mailbox | Set-CalendarProcessing -automateprocessing AutoUpdate -AddOrganizerToSubject $false -BookingWindowInDays 547 -MaximumDurationInMinutes 9360 -DeleteSubject $false -DeleteComments $false -EnforceSchedulingHorizon $false -RemovePrivateProperty $false
 
-# Permissions Commands
+## Permissions Commands
 
  Mailbox Folder Permissions
   (Individual Permissions:[CreateItems|CreateSubfolders|DeleteAllItems|DeleteOwnedItems|EditAllItems|EditOwnedItems|FolderContact|FolderOwner|FolderVisible|ReadItems])
@@ -82,7 +87,7 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
 
     Add-MailboxFolderPermission MAILBOX:\Calendar -user UserOrSecurityGroup -accessrights [PERMISSION or ROLE]
 
-# Distribution List Commands
+## Distribution List Commands
 
  Create Non-Security Distribution Group
  
@@ -122,6 +127,6 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  
     Get-DistributionGroup 'CURRENT DL GROUP NAME' | Set-DistributionGroup -DisplayName 'NEW DL GROUP NAME' -alias NEWDLGROUPNAME -BypassSecurityGroupManagerCheck
 	
-# Tracking Commands
+## Tracking Commands
  
  TODO
