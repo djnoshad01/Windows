@@ -7,8 +7,6 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
 
 ## Table of Contents
 
- * [Documentation](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#documentation)
- * [How to Connect to Exchange Online](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#how-to-connect-to-exchange-online) 
  * [Mailbox Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#mailbox-commands) 
  * [Automatic Processing Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#automatic-processing-commands) 
  * [Permissions Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#permissions-commands) 
@@ -32,7 +30,7 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
 
  Create Mail User
  
-    New-Mailox -name "USERNAME" -alias USERNAME -organizationalunit 'domain.example.com/PATH/TO/OU' -userprincipalname USERNAME -samaccountname USERNAME -password fourwordsuppercase -resetpasswordonnextlogon: $true -database 'EXCHANGE_DB'
+    New-Mailbox -name "USERNAME" -alias USERNAME -organizationalunit 'domain.example.com/PATH/TO/OU' -userprincipalname USERNAME -samaccountname USERNAME -password fourwordsuppercase -resetpasswordonnextlogon: $true -database 'EXCHANGE_DB'
 
  Rename Mailbox
 
@@ -46,7 +44,7 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
 
     New-Mailbox -room -name "ROOM NAME" -alias "ROOMALIAS" -organizationalunit 'domain.example.com/PATH/TO/OU' -userprincipalname ROOMALIAS@domain.example.com -samaccountname ROOMALIAS -database 'EXCHANGE_DB'
 	
- Create Equipment (Same as before but with the `-equipment` option instead of shared or room`)
+ Create Equipment (Same as before but with the `-equipment` option instead of shared or room)
 
  Full Access Rights
  
@@ -88,15 +86,15 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
 
  Mailbox Folder Permissions
  
-  (Individual Permissions:[CreateItems|CreateSubfolders|DeleteAllItems|DeleteOwnedItems|EditAllItems|EditOwnedItems|FolderContact|FolderOwner|FolderVisible|ReadItems])
+  Individual Permissions:[CreateItems|CreateSubfolders|DeleteAllItems|DeleteOwnedItems|EditAllItems|EditOwnedItems|FolderContact|FolderOwner|FolderVisible|ReadItems]
   
-  (Roles:[Author|Contributor|Editor|None|NonEditingAuthor|Owner|PublishingEditor|PublishingAuthor|Reviewer]
+  Roles:[Author|Contributor|Editor|None|NonEditingAuthor|Owner|PublishingEditor|PublishingAuthor|Reviewer]
  
     Add-MailboxFolderPermission MAILBOX:\FOLDER -user UserOrSecurityGroup -accessrights [PERMISSION or ROLE]
 
  Calendar Folder Permissions
  
-  (Roles specific to Calendar folders:[AvailabilityOnly|LimitedDetails]
+  Roles specific to Calendar folders:[AvailabilityOnly|LimitedDetails]
 
     Add-MailboxFolderPermission MAILBOX:\Calendar -user UserOrSecurityGroup -accessrights [PERMISSION or ROLE]
 
