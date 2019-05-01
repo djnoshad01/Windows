@@ -1,25 +1,33 @@
   # Exchange Powershell Commands
 
-Here is a list of useful powershell one-liners to help with exchange management. This is pretty much everything you need for exchange management.
-Note: You need to have an elevated shell, allow remote signed powershell scripts, and permissions to make changes on exchange with your user.
+This document is a compilation of all Exchange Mangement Shell Commands that I know. Practically, anything that needs to be done with the Exchange Management Shell will be listed here. Simply copy and paste any command and substitute the appropriate variables.
+
+Note: You need to have an elevated shell, allow remote signed powershell scripts, and permissions to make changes on Exchange with your user.
+	
 
 ## Table of Contents
 
  * [Documentation](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#documentation)
- * [Mailbox Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#mailbox-commands)
- * [Automatic Processing Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#automatic-processing-commands)
- * [Permissions Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#permissions-commands)
- * [Distribution List Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#distribution-list-commands)
+ * [How to Connect to Exchange Online](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#how-to-connect-to-exchange-online) 
+ * [Mailbox Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#mailbox-commands) 
+ * [Automatic Processing Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#automatic-processing-commands) 
+ * [Permissions Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#permissions-commands) 
+ * [Distribution List Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#distribution-list-commands) 
  * [Tracking  Commands](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md#tracking-commands)
  
+
 ## Documentation
- 
-[Here](https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps) is the Microsoft documentation on Connecting to Exchange Online via Powershell.
+
+[This](https://docs.microsoft.com/en-us/powershell/exchange/exchange-server/exchange-management-shell?view=exchange-ps) is the Official Exchange Management Shell Documentation by Microsoft.
+
+
+## How to Connect to Exchange Online
 
     $UserCredential = Get-Credential
     $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
     Import-PSSession $Session -DisableNameChecking
-	
+
+
 ## Mailbox Commands
 
  Create Mail User
@@ -63,7 +71,8 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  Add Contact
  
     New-MailContact -Name 'LastName, FirstName' -alias FirstName.LastName -ExternalEmailAddress 'EmailAddress@example.com' -organizationalunit domain.example.com/PATH/TO/ContactsOU
-	
+
+
 ## Automatic Processing Commands
  
  Calendar Invitation AutoAccept
@@ -74,18 +83,23 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  
     Get-Mailbox | Set-CalendarProcessing -automateprocessing AutoUpdate -AddOrganizerToSubject $false -BookingWindowInDays 547 -MaximumDurationInMinutes 9360 -DeleteSubject $false -DeleteComments $false -EnforceSchedulingHorizon $false -RemovePrivateProperty $false
 
+
 ## Permissions Commands
 
  Mailbox Folder Permissions
+ 
   (Individual Permissions:[CreateItems|CreateSubfolders|DeleteAllItems|DeleteOwnedItems|EditAllItems|EditOwnedItems|FolderContact|FolderOwner|FolderVisible|ReadItems])
+  
   (Roles:[Author|Contributor|Editor|None|NonEditingAuthor|Owner|PublishingEditor|PublishingAuthor|Reviewer]
  
     Add-MailboxFolderPermission MAILBOX:\FOLDER -user UserOrSecurityGroup -accessrights [PERMISSION or ROLE]
 
  Calendar Folder Permissions
+ 
   (Roles specific to Calendar folders:[AvailabilityOnly|LimitedDetails]
 
     Add-MailboxFolderPermission MAILBOX:\Calendar -user UserOrSecurityGroup -accessrights [PERMISSION or ROLE]
+
 
 ## Distribution List Commands
 
@@ -110,9 +124,13 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
     Get-DistributionGroupMember "UserAlias" | fl PrimarySmtpAddress
 	
  List Distribution List Membership of User by Distinguished Name
+ 
   (Step 1)
+  
     Get-Mailbox 'UserAlias' | select DistinguishedName | Export-CSV $env:UserProfile\DLMember.csv -notype -append
+	
   (Step 2)
+  
     Get-DistributionGroup -ResultSize Unlimited -Filter 'Members -eq "User Distinguished Name"' | select name>$env:UserProfile\USERNAME.txt
 
  Add Manager to Distribution List without Manager Replacement
@@ -127,6 +145,17 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  
     Get-DistributionGroup 'CURRENT DL GROUP NAME' | Set-DistributionGroup -DisplayName 'NEW DL GROUP NAME' -alias NEWDLGROUPNAME -BypassSecurityGroupManagerCheck
 	
+
 ## Tracking Commands
  
- TODO
+ Track Sender
+ 
+    Get-MessageTrackingLog -Sender sender@example.com -Start '01/01/70 12:01am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
+
+ Track Recipient
+ 
+    Get-MessageTrackingLog -Recipients recipient@example.com -Start '01/01/70 12:01am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
+	
+ Track Subject
+ 
+    Get-MessageTrackingLog -MessageSubject "Subject in Question" -Start '01/01/70 12:01am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype

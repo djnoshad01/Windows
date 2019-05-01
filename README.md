@@ -4,15 +4,27 @@ This is a GitHub repository of my various Windows Scripts (PowerShell and Batch 
 
 ## Table of Contents
 
-* [Getting Started](README.md)
+* [Getting Started](https://github.com/kemotep/Windows#getting-started)
+* [Notes](https://github.com/kemotep/Windows#Notes
+	* [Exchange Management]
+	* [Links]	
 * [License](LICENSE.md)
 * [Batch Files](https://github.com/kemotep/Windows/tree/master/BatchFiles)
-* [Notes](https://github.com/kemotep/Windows/tree/master/Notes)
 * [PowerShell](https://github.com/kemotep/Windows/tree/master/PowerShell)
+
 
 ## Getting Started
 
 Here is where I will place instructions on how to use this repository. Eventually there will be instructions an explanations for each script, as well as a table of contents.
+
+## Notes
+
+I will also be including my own notes for Windows Management in this repository. I will also include links to resources, guides, documentation, and communties.
+
+	### [Exchange Management](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md)
+
+	### [Links](https://github.com/kemotep/Windows/blob/master/Notes/Links.md)
+
 
 ## Built With
 
