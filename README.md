@@ -6,8 +6,8 @@ This is a GitHub repository of my various Windows Scripts (PowerShell and Batch 
 
 * [Getting Started](https://github.com/kemotep/Windows#getting-started)
 * [Notes](https://github.com/kemotep/Windows#Notes)
-	* [Exchange Management]
-	* [Links]	
+	* [Exchange Management](https://github.com/kemotep/Windows#exchange-management)
+	* [Links](https://github.com/kemotep/Windows#links)
 * [License](LICENSE.md)
 * [Batch Files](https://github.com/kemotep/Windows/tree/master/BatchFiles)
 * [PowerShell](https://github.com/kemotep/Windows/tree/master/PowerShell)
@@ -40,7 +40,7 @@ I plan to use [SemVer](http://semver.org/) for versioning. Subject to change.
 
 ## License
 
-This project is licensed under the LGPLv3 - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the LGPLv3 - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
