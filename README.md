@@ -40,7 +40,7 @@ I plan to use [SemVer](http://semver.org/) for versioning. Subject to change.
 
 ## License
 
-This project is licensed under the LGPLv3 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
