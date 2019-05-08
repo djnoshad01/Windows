@@ -1,18 +1,14 @@
-<# 
-###################################################################################
-	Invoke-DigDug / 1.0.0
-	kemotep
-	2019-04-19 / GNU Lesser General Public License v3
+<##################################################################################
+	Invoke-DigDug / 1.1.1
+	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
-	This is my take on FizzBuzz, or in this case DigDug. Load this module via Import-Module
-#>
+This is my take on FizzBuzz, or in this case DigDug. Load this using Import-Module.#>
 function Invoke-DigDug { 
 	[CmdletBinding()]
 	param (
 		[Parameter(Mandatory = $false, Position = 0)]
 		$Min = 1,
-
 	[Parameter(Mandatory = $false, Position = 1)]
 		$Max = 100
 	)

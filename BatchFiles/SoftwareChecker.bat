@@ -1,4 +1,12 @@
 @echo off
+goto comment
+###################################################################################
+	SoftwareChecker.bat / 1.1.1
+	kemotep / Apache 2.0
+	kemotep@gmail.com / https://github.com/kemotep/ 
+###################################################################################
+# This is an example batch file for checking if some software is installed on a given computer.
+:comment
 SETLOCAL EnableExtensions
 echo Verifying software is installed...
 if exist "C:\Program Files (x86)\Java\jre1.8.0_172" (

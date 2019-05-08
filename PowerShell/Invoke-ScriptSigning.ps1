@@ -1,14 +1,14 @@
-<#
+<##########################################################################
+	Kemotep's PowerShell Code Signing Script / 1.1.1
+	kemotep / Apache 2.0
+	kemotep@gmail.com / https://github.com/kemotep/ 
 ###########################################################################
-	Kemotep's PowerShell Code Signing Script
-	author: kemotep
-	version: 0.01
-	2019-04-20 / GNU Lesser General Public License v3
-	kemotep@gmail.com / https://github.com/kemotep/
-	This script requires Admin to Run!
-###########################################################################
+This script requires Admin to Run!
+Disable Set-ExecutionPolicy, then run this script. 
+Sign your scripts then renable Set-ExecutionPolicy to prevent unsigned Powershell Scripts.
+TODO: Better handle or split out last block for script signing
 #>
-
+function Invoke-ScriptSigning {
 # Here we start by creating some variables
 $CertName = "Kemotep's Script Signing Certificate"
 $CertPath = "$env:UserProfile\ScriptSigningCertificate.pfx"
@@ -24,6 +24,8 @@ Import-PfxCertificate -FilePath $CertPath -CertStoreLocation "cert:\LocalMachine
 Import-PfxCertificate -FilePath $CertPath -CertStoreLocation "cert:\LocalMachine\TrustedPublisher" -Password $CertPW
 
 # Uncomment to sign all Powershell Scripts
+# $NewCert = Get-PfxCertificate -FilePath $CertPath
 # $ScriptDir = Path\to\PowerShell\Scripts #Change as needed
 # cd $ScriptDir
-# get-childitem *ps1 | Set-AuthenticodeSignature -Certificate $CertPath
+# get-childitem *ps1 | Set-AuthenticodeSignature -Certificate $NewCert
+}
