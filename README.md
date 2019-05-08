@@ -17,11 +17,14 @@ This is a GitHub repository of my various Windows Scripts (PowerShell and Batch 
 
 Here is where I will place instructions on how to use this repository. Eventually there will be instructions an explanations for each script, as well as a table of contents.
 
+
 ## Notes
 
-I will also be including my own notes for Windows Management in this repository. I will also include links to resources, guides, documentation, and communties.
+I will also be including my own notes for Windows Management in this repository. I will also include links to resources, guides, documentation, and communities.
 
   ### [Exchange Management](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md)
+  
+	This is a list of all the Exchange Online commands that I know and example outputs. Very useful for managing Exchange. This list is not comprehensive 
 
   ### [Links](https://github.com/kemotep/Windows/blob/master/Notes/Links.md)
 
@@ -32,7 +35,7 @@ I will also be including my own notes for Windows Management in this repository.
 
 ## Versioning
 
-I plan to use [SemVer](http://semver.org/) for versioning. Subject to change.
+I plan to use [SemVer](http://semver.org/) for versioning.
 
 ## Author
 
@@ -40,10 +43,14 @@ I plan to use [SemVer](http://semver.org/) for versioning. Subject to change.
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details of the license and the [NOTICE](NOTICE) for the copyright notice.
+
+I have chosen to use the Apache 2.0 License because that is what is recommended by the [Free Software Foundation](https://www.gnu.org/licenses/license-recommendations.html) for small programs and projects.
+
+I want to use an appropriate free and open source license so that anyone is able to use my scripts and programs freely. I believe in the free exchange of information and software to the benefit for all. 
 
 ## Acknowledgments
 
 * My loving and supportive Fiance
-* StackExchange
+* Stack Exchange
 * DuckDuckgo Bang Searches
