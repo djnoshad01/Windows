@@ -24,7 +24,7 @@ I will also be including my own notes for Windows Management in this repository.
 
   ### [Exchange Management](https://github.com/kemotep/Windows/blob/master/Notes/Exchange%20Management.md)
   
-	This is a list of all the Exchange Online commands that I know and example outputs. Very useful for managing Exchange. This list is not comprehensive 
+  This is a list of all the Exchange Online commands that I know and example outputs. Very useful for managing Exchange. This list is not comprehensive 
 
   ### [Links](https://github.com/kemotep/Windows/blob/master/Notes/Links.md)
 
