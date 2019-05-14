@@ -1,7 +1,11 @@
 @echo off
 goto comment
 ###################################################################################
+<<<<<<< HEAD
 	SoftwareChecker.bat / 1.1
+=======
+	SoftwareChecker.bat / 1.1.1
+>>>>>>> staging
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
