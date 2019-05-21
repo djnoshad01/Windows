@@ -111,7 +111,7 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
 
  Add Members to Distribution List
  
-    Add-DistributionGroupMember 'DL GROUP NAME' -member USerAlias
+    Add-DistributionGroupMember 'DL GROUP NAME' -member UserAlias
 
  Remove Members from Distribution List
  

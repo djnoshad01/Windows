@@ -1,5 +1,5 @@
 <##########################################################################
-	Kemotep's PowerShell Code Signing Script / 1.1.1
+	Kemotep's PowerShell Code Signing Script / 1.1.2
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###########################################################################
