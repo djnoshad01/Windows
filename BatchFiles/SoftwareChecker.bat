@@ -1,43 +1,47 @@
 @echo off
 goto comment
 ###################################################################################
-	SoftwareChecker.bat / 1.1
+	SoftwareChecker.bat / 1.2.0
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
+
+This is an example batch file for checking if some software is installed on a given computer.
+The escaped entry provides color text for Windows 10 consoles.
+You can check for local software installs and processes.
+A freshly imaged computer that has run the task sequences should pass with all greens. Red is failures.
 ###################################################################################
-# This is an example batch file for checking if some software is installed on a given computer.
 :comment
 SETLOCAL EnableExtensions
 echo Verifying software is installed...
-if exist "C:\Program Files (x86)\Java\jre1.8.0_172" (
-	echo [92mJava 1.8-172 32-bit is installed![0m
+if exist "Path\to\program\0" (
+	echo [92mProgram 0 is installed![0m
 	) else (
-	echo [91mJava 1.8-172 32-bit is NOT installed![0m
+	echo [91mProgram 0 is NOT installed![0m
 	)
-if exist "C:\Program Files\Java\jre1.8.0_172" (
-	echo [92mJava 1.8-172 64-bit is installed![0m
+if exist "Path\to\program\1" (
+	echo [92mProgram 1 is installed![0m
 	) else (
-	echo [91mJava 1.8-172 64-bit is NOT installed![0m
+	echo [91mProgram 1 is NOT installed![0m
 	)
-if exist "C:\Program Files\Siemens\JT2Go" (
-	echo [92mJT2GO is installed![0m
+if exist "Path\to\program\2" (
+	echo [92mProgram 2 is installed![0m
 	) else (
-	echo [91mJT2GO is NOT installed![0m
+	echo [91mProgram 2 is NOT installed![0m
 	) 
-if exist "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" (
-	echo [91mOffice 365 is NOT removed![0m
+if exist "Path\to\program\3" (
+	echo [91mProgram 3 is NOT removed![0m
 	) else (
-	echo [92mOffice 365 is removed![0m
+	echo [92mProgram 3 is removed![0m
 	)
-if exist "C:\Program Files (x86)\Common Files\microsoft shared\OFFICE15\Office Setup Controller\Setup.exe" ( 
-	echo [92mOffice 2013 is installed![0m
+if exist "Path\to\program\4" ( 
+	echo [92mProgram 4 is installed![0m
 	) else (
-	echo [91mOffice 2013 is NOT installed![0m
+	echo [91mProgram 4  is NOT installed![0m
 	)
-set EXE=SmcGui.exe
+set EXE=someProcess.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% ( 
-	echo [92mSymatec is running![0m
+	echo [92msomeProcess is running![0m
 	) else (
-	echo [91mSymatec is NOT running![0m
+	echo [91msomeProcess is NOT running![0m
 	)
 pause

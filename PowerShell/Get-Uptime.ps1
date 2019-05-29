@@ -3,11 +3,7 @@
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
-<<<<<<< HEAD
-Neat script from /r/sysadmin. Load this using Import-Module. #>
-=======
 Neat script from reddit.com/r/sysadmin. Load this using Import-Module. #>
->>>>>>> staging
 function Get-UpTime {
 <#  
 .Synopsis
