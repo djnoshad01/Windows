@@ -1,9 +1,10 @@
 <##################################################################################
-	Invoke-DigDug / 1.1.2
+	Invoke-DigDug / 1.2.0
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
-This is my take on FizzBuzz, or in this case DigDug. Load this using Import-Module.#>
+This is my take on FizzBuzz, or in this case DigDug. With parameter binding you can pass through your own inputs.
+Default is `-Min 1 -Max 100` Use your own with the `-Min` and `-Max` flags.#>
 function Invoke-DigDug { 
 	[CmdletBinding()]
 	param (

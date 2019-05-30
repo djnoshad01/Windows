@@ -1,5 +1,5 @@
 <##################################################################################
-	Test-Print / 1.1.2
+	Test-Print / 1.2.0
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
@@ -7,7 +7,7 @@ Test Powershell Script
 Practice of creating variables, if/else, and various cmdlets
 Here we create a variable named receiptName
 Since it is based off of time down to the seconds, it can only be declared once
-TODO: Better Handle Files for Logging
+TODO: Better Handle Files for Logging. Still needed at 1.2.0! <--
 #>
 function Test-Print {
 New-Variable -Name "receiptName" `

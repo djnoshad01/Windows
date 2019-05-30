@@ -8,7 +8,8 @@ goto comment
 This is an example batch file for checking if some software is installed on a given computer.
 The escaped entry provides color text for Windows 10 consoles.
 You can check for local software installs and processes.
-A freshly imaged computer that has run the task sequences should pass with all greens. Red is failures.
+A freshly imaged computer that has run the task sequences should Pass with all Green Messages. Red Messages are Failures
+Note the escape characters. Windows 10 has wonky support for color printing in the Console. Hold your breath for the new Terminal.
 ###################################################################################
 :comment
 SETLOCAL EnableExtensions

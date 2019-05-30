@@ -1,16 +1,16 @@
  <##################################################################################
-	Get-UpTime / 1.1.2
+	Get-UpTime / 1.2.0
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###################################################################################
-Neat script from reddit.com/r/sysadmin. Load this using Import-Module. #>
+Neat script from reddit.com/r/sysadmin. TODO: Refactor to "kemotep style" #>
 function Get-UpTime {
-<#  
+<# 
 .Synopsis
     Get a given computers current uptime
 .DESCRIPTION
     This function will allows a user to determine the uptime of a given computer using a wmi query. 
-	Useful for determing last boot.
+	Useful for determing last boot. 
 #>
 param (
     [Parameter(mandatory = $true, ValueFromPipeline = $true)]
@@ -21,7 +21,7 @@ process {
     $query = "select * from win32_pingstatus where address = '$ComputerName'"
     $ping = Get-WmiObject -query $query
     if ($ping.protocoladdress) {
-        # Ping responded, so mow we connect to the computer via WMI
+        # Ping responded, so now we connect to the computer via WMI
         $os = Get-WmiObject Win32_OperatingSystem -ComputerName $ComputerName -ev myError -ea SilentlyContinue
         $LastBootUpTime = $os.ConvertToDateTime($os.LastBootUpTime)
         $LocalDateTime = $os.ConvertToDateTime($os.LocalDateTime)

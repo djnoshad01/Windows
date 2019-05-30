@@ -1,12 +1,12 @@
 <##########################################################################
-	Kemotep's PowerShell Code Signing Script / 1.1.2
+	Kemotep's PowerShell Code Signing Script / 1.2.0
 	kemotep / Apache 2.0
 	kemotep@gmail.com / https://github.com/kemotep/ 
 ###########################################################################
 This script requires Admin to Run!
 Disable Set-ExecutionPolicy, then run this script. 
 Sign your scripts then renable Set-ExecutionPolicy to prevent unsigned Powershell Scripts.
-TODO: Better handle or split out last block for script signing
+TODO: Better handle or split out last block for script signing. Still needed at 1.2.0! <---
 #>
 function Invoke-ScriptSigning {
 # Here we start by creating some variables

@@ -3,7 +3,8 @@
 This document is a compilation of all Exchange Mangement Shell Commands that I know. Practically, anything that needs to be done with the Exchange Management Shell will be listed here. Simply copy and paste any command and substitute the appropriate variables.
 
 Note: You need to have an elevated shell, allow remote signed powershell scripts, and permissions to make changes on Exchange with your user.
-	
+
+Next step is to build a module using all of these. That module should be a "single pane of glass" allowing for management of an Exchange Online environment.
 
 ## Table of Contents
 
@@ -148,12 +149,12 @@ Note: You need to have an elevated shell, allow remote signed powershell scripts
  
  Track Sender
  
-    Get-MessageTrackingLog -Sender sender@example.com -Start '01/01/70 12:01am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
+    Get-MessageTrackingLog -Sender sender@example.com -Start '01/01/70 12:00am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
 
  Track Recipient
  
-    Get-MessageTrackingLog -Recipients recipient@example.com -Start '01/01/70 12:01am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
+    Get-MessageTrackingLog -Recipients recipient@example.com -Start '01/01/70 12:00am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
 	
  Track Subject
  
-    Get-MessageTrackingLog -MessageSubject "Subject in Question" -Start '01/01/70 12:01am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
+    Get-MessageTrackingLog -MessageSubject "Subject in Question" -Start '01/01/70 12:00am' -End '01/19/38 3:14am' -ResultSize Unlimited | Export-CSV "Path/To/Export.csv" -notype
